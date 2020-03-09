@@ -36,7 +36,7 @@ library(httr)
 
 # 2) import city data ----
 city_list <- 
-  import("/Users/Sam/Downloads/1000-largest-us-cities-by-population-with-geographic-coordinates.csv") %>% 
+  import("https://raw.githubusercontent.com/parmsam/national-weather-service-forecasts/master/1000-largest-us-cities-by-population-with-geographic-coordinates.csv") %>% 
   separate(Coordinates, into=c("Long","Lat"),sep=regex(","))  %>% 
   mutate(city_state=paste0(City,", ",State))
 
