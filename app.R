@@ -7,9 +7,9 @@ library(DT)
 
 # Pull data ----
 city_list <- 
-    import("/Users/Sam/Downloads/1000-largest-us-cities-by-population-with-geographic-coordinates.csv") %>% 
-    separate(Coordinates, into=c("Long","Lat"),sep=regex(","))  %>% 
-    mutate(city_state=paste0(City,", ",State))
+  import("https://raw.githubusercontent.com/parmsam/national-weather-service-forecasts/master/1000-largest-us-cities-by-population-with-geographic-coordinates.csv") %>% 
+  separate(Coordinates, into=c("Long","Lat"),sep=regex(","))  %>% 
+  mutate(city_state=paste0(City,", ",State))
 
 # Define UI for application that ouptuts table of weather forecast
 ui <- fluidPage(
